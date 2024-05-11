@@ -14,6 +14,7 @@
     overflow-x: hidden;
 }
 
+ 
 .announcement-bar ul {
     display: flex;
     justify-content: flex-start;
@@ -195,6 +196,109 @@ nav ul li a {
     cursor: pointer;
 }
 
+/* discount section */
+.main .data-ird {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 35px 100px;
+}
+
+.data-ird .as-seen {
+    width: 10%;
+}
+
+.data-ird .image-names {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.data-ird-img-container {
+    width: 120px;
+    height: 30px;
+}
+
+
+.image-names img {
+    width: 100px;
+    height: auto;
+    object-fit: contain;
+}
+
+
+.data-ird-img-container:nth-child(6) {
+    margin-top: -20px;
+    width: 120px;
+    height:15px;
+}
+ 
+.data-ird-img-container:nth-child(7) {
+    margin-top: -20px;
+}
+
+.horizontal-line {
+    width: 100%;
+    color: black;
+}
+
+
+
+.disconunt-container {
+    width: 100%;
+    display: flex;
+    padding: 40px;
+}
+
+.right-div {
+    width: 55%;
+}
+.left-div {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: center;
+    padding-right: 10px;
+}
+
+
+.right-div img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.disconunt-container .left-div h1{
+    font-size: 35px;
+}
+
+.disconunt-container .left-div p{
+    font-size: 18px;
+    letter-spacing: 1.2px;
+    word-spacing: 5px;
+}
+
+
+.visit-button {
+    width: 300px;
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    font-size: 12px;
+    padding: 15px 20px;
+    border-radius: 20px;
+    font-weight: 200;
+    word-spacing: 4px;
+    letter-spacing: 5px;
+    transition: background-color 0.3s;
+}
+
+.visit-button:hover {
+    background-color: rgb(61, 57, 57);
+}
 
 @media screen and (max-width: 767px) {
 
@@ -231,6 +335,46 @@ nav ul li a {
     #close-sidebar {
         font-size: 15px;
     }
+
+
+    .main .data-ird {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .main .data-ird .as-seen {
+        width: 100%;
+        text-align: center;
+    }
+
+    .main .data-ird .image-names {
+        width: 100%;
+        display: flex;
+        gap: 10px;
+        overflow-x: hidden;
+        animation: move-rtl 10s linear infinite;
+    }
+
+    .disconunt-container{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .disconunt-container .left-div{
+        width: 100%;
+        text-align: center;
+    }
+    .disconunt-container .right-div{
+        width: 100%;
+    }
+    .visit-button {
+        width: auto;  
+        margin: 0 auto; 
+        display: block; 
+    }
 }
 
 @media screen and (max-width: 997px) {
@@ -262,5 +406,40 @@ nav ul li a {
 
     #close-sidebar {
         font-size: 25px;
+    }
+
+    .main .data-ird {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .main .data-ird .as-seen {
+        width: 100%;
+        text-align: center;
+    }
+
+    .main .data-ird .image-names {
+        width: 100%;
+        display: flex;
+        overflow-x: hidden;
+        gap: 10px;
+    }
+
+
+    .disconunt-container .left-div h1{
+        font-size: 30px;
+    }
+    
+    .disconunt-container .left-div p{
+        font-size: 15px;
+        letter-spacing: 1.1px;
+        word-spacing: 4px;
+    } 
+    
+    .visit-button {
+        width: 280px;
+        font-size: 12px;
     }
 }
