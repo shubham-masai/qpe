@@ -1,7 +1,7 @@
 * {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+    margin: 0%;
+    padding: 0%;
 }
 
 /* annucement-bar */
@@ -314,15 +314,17 @@ nav ul li a {
 }
 
 
-.top-seller h1{
+.top-seller h1 {
     font-size: 42px;
     letter-spacing: 1.2px;
 }
-.top-seller p{
+
+.top-seller p {
     font-size: 20px;
     letter-spacing: 1.2px;
     margin-bottom: 10px;
 }
+
 .top-seller .cart-container {
     width: 100%;
     height: auto;
@@ -391,6 +393,10 @@ nav ul li a {
 
 .review .review-div span {
     margin-left: 10px;
+}
+
+.review .review-div p {
+    text-align: start;
 }
 
 .review .review-div span,
@@ -516,6 +522,17 @@ nav ul li a {
         margin: 0 auto;
         display: block;
     }
+
+    .unmatched {
+        width: 100%;
+        padding: 0% 0%;
+    }
+
+    .unmatched .details-container {
+        display: flex;
+        flex-direction: column;
+        padding: 0% 0%;
+    }
 }
 
 @media screen and (max-width: 997px) {
@@ -590,4 +607,70 @@ nav ul li a {
         grid-template-columns: repeat(2, 1fr);
         gap: 15px;
     }
+
+    .unmatched {
+        padding: 40px;
+    }
+}
+
+.unmatched {
+    width: 100%;
+    text-align: center;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    background-color: rgb(247, 245, 241);
+}
+
+.details-container {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    padding: 20px 40px;
+    text-align: start;
+    word-spacing: 5.8px;
+}
+
+.detal-meta-data {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 10px 20px;
+}
+
+.detal-meta-data h1 {
+    font-size: large;
+    letter-spacing: 1.2px;
+}
+
+.detal-meta-data p {
+    font-size: medium;
+    letter-spacing: 1.2px;
+}
+
+.firebelly p {
+    letter-spacing: 1.2px;
+    font-size: 15px;
+}
+
+.firebelly h1 {
+    letter-spacing: 1.3px;
+    font-size: 35px;
+}
+
+.image-wrapper {
+    width: 100%;
+    overflow: hidden;
+}
+
+.image-container {
+    width: 100%;
+    border: 1px solid black;
+}
+
+.image-container img {
+    display: block;
+    width: 100%;
+    height: auto;
 }
