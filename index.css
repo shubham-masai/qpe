@@ -14,7 +14,7 @@
     overflow-x: hidden;
 }
 
- 
+
 .announcement-bar ul {
     display: flex;
     justify-content: flex-start;
@@ -232,9 +232,9 @@ nav ul li a {
 .data-ird-img-container:nth-child(6) {
     margin-top: -20px;
     width: 120px;
-    height:15px;
+    height: 15px;
 }
- 
+
 .data-ird-img-container:nth-child(7) {
     margin-top: -20px;
 }
@@ -255,6 +255,7 @@ nav ul li a {
 .right-div {
     width: 55%;
 }
+
 .left-div {
     width: 45%;
     display: flex;
@@ -271,11 +272,11 @@ nav ul li a {
     object-fit: contain;
 }
 
-.disconunt-container .left-div h1{
+.disconunt-container .left-div h1 {
     font-size: 35px;
 }
 
-.disconunt-container .left-div p{
+.disconunt-container .left-div p {
     font-size: 18px;
     letter-spacing: 1.2px;
     word-spacing: 5px;
@@ -300,8 +301,146 @@ nav ul li a {
     background-color: rgb(61, 57, 57);
 }
 
-@media screen and (max-width: 767px) {
 
+/* Top seller*/
+.top-seller {
+    width: 100%;
+    text-align: center;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    background-color: rgb(247, 245, 241);
+}
+
+
+.top-seller h1{
+    font-size: 42px;
+    letter-spacing: 1.2px;
+}
+.top-seller p{
+    font-size: 20px;
+    letter-spacing: 1.2px;
+    margin-bottom: 10px;
+}
+.top-seller .cart-container {
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    box-sizing: border-box;
+}
+
+.cart-container .cart {
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+}
+
+.cart-container .cart:hover {
+    border: 1px solid black;
+}
+
+
+.cart-container .cart .product-img {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+.cart-container .cart .product-img img {
+    width: 100%;
+}
+
+
+.cart-container .cart .title-div {
+    background-color: white;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    flex-direction: start;
+    padding: 25px;
+}
+
+.title-div p {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.cart-container .description {
+    background-color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.cart .review {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.review .review-div {
+    width: 100%;
+    display: flex;
+    flex-direction: start;
+    margin-bottom: 10px;
+}
+
+.review .review-div span {
+    margin-left: 10px;
+}
+
+.review .review-div span,
+.review .review-div p {
+    font-size: 15px;
+    letter-spacing: 1.1px;
+    color: gray;
+}
+
+
+.cart-container .cart select,
+.cart-container .cart button {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.cart-container .cup-container {
+    display: flex;
+    gap: 10px;
+}
+
+.cart-container .cup-container img {
+    width: 18px;
+    height: 13px;
+}
+
+.cart-container .cart select {
+    padding: 5px;
+    border-radius: 20px;
+    padding: 8px 22px;
+}
+
+.cart-container .cart button {
+    padding: 10px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    padding: 15px;
+    font-size: 15px;
+    letter-spacing: 1.2px;
+}
+
+.cart-container .cart button:hover {
+    background-color: rgb(231, 231, 89);
+}
+
+
+@media screen and (max-width: 767px) {
     .banner-section .title-container {
         width: 95%;
     }
@@ -357,23 +496,25 @@ nav ul li a {
         animation: move-rtl 10s linear infinite;
     }
 
-    .disconunt-container{
+    .disconunt-container {
         display: flex;
         flex-direction: column;
         gap: 20px;
     }
 
-    .disconunt-container .left-div{
+    .disconunt-container .left-div {
         width: 100%;
         text-align: center;
     }
-    .disconunt-container .right-div{
+
+    .disconunt-container .right-div {
         width: 100%;
     }
+
     .visit-button {
-        width: auto;  
-        margin: 0 auto; 
-        display: block; 
+        width: auto;
+        margin: 0 auto;
+        display: block;
     }
 }
 
@@ -428,18 +569,25 @@ nav ul li a {
     }
 
 
-    .disconunt-container .left-div h1{
+    .disconunt-container .left-div h1 {
         font-size: 30px;
     }
-    
-    .disconunt-container .left-div p{
+
+    .disconunt-container .left-div p {
         font-size: 15px;
         letter-spacing: 1.1px;
         word-spacing: 4px;
-    } 
-    
+    }
+
     .visit-button {
         width: 280px;
         font-size: 12px;
+    }
+
+    #cart-container {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
     }
 }
