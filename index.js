@@ -385,7 +385,7 @@ videosData = [
         thumbnail: "https://cdn.shopify.com/s/files/1/0573/8502/5710/files/Video-6.jpg?v=1710952830"
     }
 ]
- 
+
 function showThumbnails() {
     const videoThumbnailWrapper = document.querySelector('.video-thumbnail-wrapper');
 
@@ -424,3 +424,166 @@ function showThumbnails() {
 }
 
 window.onload = showThumbnails;
+
+ 
+//  products 
+const products = [
+    {
+        name: "STOP-INFUSION TRAVEL MUG",
+        image: "https://www.firebellytea.com/cdn/shop/files/stop-infusion-travel-mug-621245.jpg?v=1713186305&width=2048",
+        reviews: 94,
+        description: "Steep perfect hot or iced tea on-the-go, no mess. 100% leakproof and made with non-toxic materials.",
+        cupSize: "16oz / 470ml",
+        options: ["NOIR", "BLANC", "FORET", "MER", "SAUMON", "FEU"],
+        totalStar: 5,
+        price: 39.95
+    },
+    {
+        name: "THE CROWD PLEASER",
+        image: "https://www.firebellytea.com/cdn/shop/products/the-crowd-pleaser-456638.jpg?v=1709003470&width=2048",
+        reviews: 100,
+        description: "Real vanilla pod and almond blended with a smooth black tea. Lightly sweet and always a hit.",
+        cupSize: "20-25",
+        options: ["DISPLAY BOX", "REFILL BAG"],
+        totalStar: 4.5,
+        price: 29.95
+    },
+    {
+        name: "TEA STRAINER",
+        image: "https://www.firebellytea.com/cdn/shop/products/Strainer_Black2_1.jpg?v=1677079832&width=2048",
+        reviews: 57,
+        description: "Allows full expansion for the best flavor. Comes with resting cup to catch drips and puddles.",
+        cupSize: "UNIVERSAL FIT",
+        options: ["NOIR", "REFILL BAG"],
+        totalStar: 4.5,
+        price: 19.95
+    },
+    {
+        name: "MAKES GOOD SENCHA",
+        image: "https://www.firebellytea.com/cdn/shop/files/MakesGoodSencha-1-icons-NEW.jpg?v=1708960811&width=2048",
+        reviews: 101,
+        description: "A fan-favorite blend of buttery sencha and bright gyokuro green teas. It's a must-try with major benefits.",
+        cupSize: "20-25",
+        options: ["DISPLAY BOX", "REFILL BAG"],
+        totalStar: 4.5,
+        price: 27.95
+    }
+];
+ 
+function generateProduct(product) {
+    const fullStars = Math.floor(product.totalStar);
+    const halfStar = (product.totalStar % 1!== 0);
+
+    let starsHTML = '';
+    for (let i = 0; i < fullStars; i++) {
+        starsHTML += '<i class="fa-solid fa-star"></i>';
+    }
+    if (halfStar) {
+        starsHTML += '<i class="fa-solid fa-star-half"></i>';
+    }
+
+    return `
+        <div class="cart">
+            <div class="title-div">
+                <p>${product.name}</p>
+            </div>
+            <div class="product-img">
+                <img src="${product.image}" alt="">
+            </div>
+            <div class="description">
+                <div class="review">
+                    <div class="review-div">
+                        ${starsHTML}
+                        <span>${product.reviews} Reviews</span>
+                    </div>
+                    <div class="review-div">
+                        <p>${product.description}</p>
+                    </div>
+                </div>
+                <div class="cup-container">
+                    <img src="https://cdn.shopify.com/s/files/1/0573/8502/5710/files/cup.png?v=1711131762&width=2048" alt="">
+                    <p>${product.cupSize}</p>
+                </div>
+                <div>
+                    <button class="add-to-cart-button" data-price="${product.price}">ADD TO CART</button>
+                </div>
+            </div>
+        </div>
+    `;
+}
+
+function TopSellers() {
+    const topSellerSection = document.querySelector('.top-seller');
+    const cartContainer = topSellerSection.querySelector('#cart-container');
+
+    products.forEach(product => {
+        cartContainer.innerHTML += generateProduct(product);
+    });
+
+    const carts = document.querySelectorAll('.cart');
+    carts.forEach(cart => {
+
+        cart.addEventListener('mouseover', function() {
+            const buttons = this.querySelectorAll('.add-to-cart-button');
+            buttons.forEach(button => {
+                const price = button.getAttribute('data-price');
+                button.textContent = `ADD TO CART | $${price}`;
+            });
+        });
+
+        cart.addEventListener('mouseout', function() {
+            const buttons = this.querySelectorAll('.add-to-cart-button');
+            buttons.forEach(button => {
+                button.textContent = 'ADD TO CART';
+            });
+        });
+    });
+}
+
+TopSellers();
+
+const shopData = {
+    first: [
+        "ALL TEAS",
+        "ACCESSORIES",
+        "MATCHA",
+        "BUNDLE & SAVE",
+        "THE GIFT SHOP",
+        "VARIETY PACKS",
+        "SUBSCRIPTIONS",
+        "WHOLESALE"
+    ],
+
+    second: [
+        "Black",
+        "Green",
+        "Matcha",
+        "Herbal",
+        "Caffeinated",
+        "Iced Tea",
+        "Tea Lattes",
+        "Mate",
+        "Oolong"
+    ],
+    third: [
+        "Antioxidants",
+        "Sustained Energy",
+        "Immunity Support",
+        "Digestion",
+        "Sleep",
+        "Mental Focus",
+        "Relaxation"
+    ],
+    fourth: [
+        "Coffee-Like",
+        "Grassy & Clean",
+        "Light & Floral",
+        "Chocolate & Vanilla",
+        "Ginger & Spicy",
+        "Toasted",
+        "Minty",
+        "Fruity",
+        "Dark",
+        "Chai & Pumpkin"
+    ]
+}

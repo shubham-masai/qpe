@@ -58,7 +58,7 @@
 }
 
 .title-text {
-    font-size: 40px;
+    font-size: 48px;
     line-height: 50px;
     letter-spacing: 0.6px;
     font-weight: 400;
@@ -130,8 +130,8 @@
 .menu-main li {
     display: inline-block;
     margin-right: 10px;
-    font-size: 14px;
-    font-weight: bold;
+    font-size: 12px;
+    font-weight: 600;
     letter-spacing: 1.2px;
     margin-right: 20px;
 }
@@ -319,7 +319,7 @@ nav ul li a {
 .top-seller {
     width: 100%;
     text-align: center;
-    padding: 60px;
+    padding: 50px;
     display: flex;
     flex-direction: column;
     gap: 30px;
@@ -332,11 +332,6 @@ nav ul li a {
     letter-spacing: 1.2px;
 }
 
-.top-seller p {
-    font-size: 20px;
-    letter-spacing: 1.2px;
-    margin-bottom: 10px;
-}
 
 .top-seller .cart-container {
     width: 100%;
@@ -351,6 +346,7 @@ nav ul li a {
     display: flex;
     flex-direction: column;
     overflow: auto;
+    box-sizing: content-box;
 }
 
 .cart-container .cart:hover {
@@ -386,7 +382,7 @@ nav ul li a {
 
 .cart-container .description {
     background-color: white;
-    padding: 20px;
+    padding: 15px;
     display: flex;
     flex-direction: column;
     gap: 12px;
@@ -408,7 +404,7 @@ nav ul li a {
 .review .review-div span {
     margin-left: 10px;
 }
-
+ 
 .review .review-div p {
     text-align: start;
 }
@@ -431,6 +427,12 @@ nav ul li a {
 .cart-container .cup-container {
     display: flex;
     gap: 10px;
+}
+
+.cart-container .cup-container p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
 }
 
 .cart-container .cup-container img {
@@ -456,7 +458,7 @@ nav ul li a {
     letter-spacing: 1.2px;
 }
 
-.cart-container .cart button:hover {
+.cart-container .cart:hover .description button {
     background-color: rgb(231, 231, 89);
 }
 
@@ -889,6 +891,7 @@ nav ul li a {
     height: 200px;
     margin: auto;
     align-items: center;
+    overflow: hidden;
 }
 
 .imagesection .imageDIVSection {
@@ -1202,6 +1205,24 @@ footer {
         font-size: 12px;
     }
 
+    .top-seller{
+        padding: 10px 10px;
+    }
+
+    .top-seller h1{
+        font-size: 20px;
+    }
+
+    .cart .title-div p{
+        font-size: 12px;
+    }
+
+    .cart .description  span{
+        font-size: 12px;
+    }
+    .cart .description button{
+        font-size: 12px;
+    }
     #cart-container {
         width: 100%;
         display: grid;
