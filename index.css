@@ -446,6 +446,282 @@ nav ul li a {
 }
 
 
+
+/* picture and unmatched section start */
+.unmatched {
+    width: 100%;
+    text-align: center;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    background-color: rgb(247, 245, 241);
+}
+
+.details-container {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    padding: 20px 40px;
+    text-align: start;
+    word-spacing: 5.8px;
+}
+
+.detal-meta-data {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 10px 20px;
+}
+
+.detal-meta-data h1 {
+    font-size: large;
+    letter-spacing: 1.2px;
+}
+
+.detal-meta-data p {
+    font-size: medium;
+    letter-spacing: 1.2px;
+}
+
+.firebelly p {
+    letter-spacing: 1.2px;
+    font-size: 15px;
+}
+
+.firebelly h1 {
+    letter-spacing: 1.3px;
+    font-size: 35px;
+}
+
+.image-wrapper {
+    width: 100%;
+    overflow: hidden;
+}
+
+.image-container {
+    width: 100%;
+}
+
+.image-container img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* picture and unmatched section end*/
+
+
+/* Review section  start */
+
+.slider {
+    width: 100%;
+    height: auto;
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 50px 0px;
+}
+
+.slider-heading {
+    font-size: 25px;
+    margin-bottom: 30px;
+}
+
+.slider-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.carousel-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    overflow: hidden;
+}
+
+.carousel-item {
+    width: 50%;
+    height: 370px;
+    display: flex;
+    border: 1px solid white;
+}
+
+.carousel-item .left-desc,
+.carousel-item .right-img {
+    width: 50%;
+}
+
+.carousel-item .right-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.left-desc {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px 20px;
+    font-size: 21px;
+    text-align: start;
+    margin-top: 12px;
+}
+
+
+.stars {
+    color: rgb(229, 137, 121);
+    font-size: 24px;
+}
+
+.star {
+    display: inline-block;
+}
+
+.carousel-prev,
+.carousel-next {
+    width: 25%;
+    height: 370px;
+    border: 1px solid white;
+    cursor: pointer;
+    display: flex;
+}
+
+.carousel-prev {
+    border-left: 0px;
+    padding: 0px 0px 0px 50px;
+}
+
+.carousel-next {
+    border-right: 0px;
+}
+
+.carousel-prev .left-desc {
+    display: none;
+}
+
+.carousel-prev .right-img {
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-prev .right-img img {
+    width: 100%;
+    height: 100%;
+}
+
+
+.carousel-next .left-desc {
+    width: 80%;
+    height: 100%;
+}
+
+.carousel-next .right-img {
+    width: 20%;
+    height: 100%;
+}
+
+.carousel-next .right-img img {
+    height: 100%;
+}
+
+
+.carousel-btn button {
+    background-color: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.carousel-btn button i {
+    font-size: 35px;
+}
+
+/* Review section  end */
+
+
+
+
+
+ /* popular section start */
+
+ .popular{
+    width: 100%;
+    background-color: rgb(247,245,241);
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+ }
+
+ .popular h1{
+    text-align: center;
+    font-size: 40px;
+    letter-spacing: 1.5px;
+ }
+ .popular-container{
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+}
+
+.popular-container .popular-item{
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    border: 1px solid #ddd;
+}
+
+.popular-container .popular-item:hover{
+border: 1px solid black;
+}
+.popular-item .popular-title{
+    width: 100%;
+    font-size: 18px; 
+    letter-spacing: 1.2px;
+    word-spacing: 1.2px;
+    font-weight: bold;
+    text-align: start; 
+    padding: 10px 20px;
+    background-color: white;
+}
+
+.popular-item .popular-image{
+    width: 100%;
+    height: 340px;
+    overflow: hidden;
+}
+
+.popular-item .popular-image img{
+    width: 100%; 
+    height:  auto;
+    object-fit: cover;
+}
+
+.popular-item .popular-browse {
+    text-align: center; 
+    padding: 10px; 
+    background-color: black;
+    color: white;
+    letter-spacing: 1.2px;
+    word-spacing: 1.2px;
+}
+
+.popular-item .popular-browse:hover{
+    background-color: rgb(193, 219, 66);
+}
+ 
+/* popular section end */
+
+
+
+/* Small screens (max-width: 767px) */
 @media screen and (max-width: 767px) {
     .banner-section .title-container {
         width: 95%;
@@ -533,8 +809,29 @@ nav ul li a {
         flex-direction: column;
         padding: 0% 0%;
     }
+
+    .popular-container {
+        grid-template-columns: repeat(2, 1fr) !important; /* Add !important to ensure it overrides other styles */
+    }
+
+    .popular-item .popular-image{
+        height: 250px;
+    }
+
+    .popular-item .popular-title{
+        font-size: 12px;  
+    }
+    
+    .popular-item .popular-browse{
+        font-size: 12px;
+    }
 }
 
+/* Small screens (max-width: 767px) end*/
+
+
+
+/* mid screens (max-width: 997px) start*/
 @media screen and (max-width: 997px) {
 
     .title-container {
@@ -613,64 +910,4 @@ nav ul li a {
     }
 }
 
-.unmatched {
-    width: 100%;
-    text-align: center;
-    padding: 60px;
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    background-color: rgb(247, 245, 241);
-}
-
-.details-container {
-    width: 100%;
-    display: flex;
-    gap: 10px;
-    padding: 20px 40px;
-    text-align: start;
-    word-spacing: 5.8px;
-}
-
-.detal-meta-data {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    padding: 10px 20px;
-}
-
-.detal-meta-data h1 {
-    font-size: large;
-    letter-spacing: 1.2px;
-}
-
-.detal-meta-data p {
-    font-size: medium;
-    letter-spacing: 1.2px;
-}
-
-.firebelly p {
-    letter-spacing: 1.2px;
-    font-size: 15px;
-}
-
-.firebelly h1 {
-    letter-spacing: 1.3px;
-    font-size: 35px;
-}
-
-.image-wrapper {
-    width: 100%;
-    overflow: hidden;
-}
-
-.image-container {
-    width: 100%;
-    border: 1px solid black;
-}
-
-.image-container img {
-    display: block;
-    width: 100%;
-    height: auto;
-}
+/* mid screens (max-width: 997px) end*/
