@@ -268,7 +268,7 @@ const imageSection = document.getElementById('imageSection');
 imagesData.forEach(item => {
     const imageDIVSection = document.createElement("div");
     imageDIVSection.classList.add("imageDIVSection");
-    
+
     const imgDiv = document.createElement("div");
     imgDiv.classList.add("imgContainer");
     const img = document.createElement('img');
@@ -288,3 +288,51 @@ imagesData.forEach(item => {
     imageDIVSection.appendChild(titleDiv);
     imageSection.appendChild(imageDIVSection);
 });
+
+
+ 
+
+const footerData = {
+    about: [
+        "ABOUT US",
+        "CONTACT US",
+        "SUSTAINABILITY",
+        "FAQ",
+        "GIVE $10, GET $10",
+        "STORE LOCATOR"
+    ],
+    follow: [
+        "INSTAGRAM",
+        "TIKTOK",
+        "FACEBOOK",
+        "YOUTUBE",
+        "PINTEREST"
+    ],
+    info: [
+        "SHIPPING & RETURNS",
+        "PR ENQUIRIES",
+        "WHOLESALE",
+        "CORPORATE GIFTING",
+        "AMBASSADOR TEAM",
+        "CAREERS"
+    ]
+};
+
+const footer = document.querySelector('.footer-container');
+
+// Function to create list items for each section
+function createListItems(items) {
+    return items.map(item => `<li>${item}</li>`).join('');
+}
+
+// Populate About section
+const aboutSection = footer.querySelector('.footer-section:nth-child(1) ul');
+aboutSection.innerHTML = createListItems(footerData.about);
+
+// Populate Follow section
+const followSection = footer.querySelector('.footer-section:nth-child(2) ul');
+followSection.innerHTML = createListItems(footerData.follow);
+
+// Populate Info section
+const infoSection = footer.querySelector('.footer-section:nth-child(3) ul');
+infoSection.innerHTML = createListItems(footerData.info);

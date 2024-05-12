@@ -677,10 +677,12 @@ nav ul li a {
     flex-direction: column;
     overflow: auto;
     border: 1px solid #ddd;
+    background-color: black;
 }
 
 .popular-container .popular-item:hover {
     border: 1px solid black;
+    background-color: rgb(193, 219, 66);
 }
 
 .popular-item .popular-title {
@@ -709,16 +711,11 @@ nav ul li a {
 .popular-item .popular-browse {
     text-align: center;
     padding: 10px;
-    background-color: black;
     color: white;
     letter-spacing: 1.2px;
     word-spacing: 1.2px;
 }
 
-
-.popular-item .popular-browse:hover {
-    background-color: rgb(193, 219, 66);
-}
 
 
 /* popular section end */
@@ -804,18 +801,109 @@ nav ul li a {
     height: 100px;
     display: flex;
     flex-direction: column;
-    gap: 5px; 
+    gap: 5px;
 }
+
 .imagesection .imageDIVSection .imgContainer {
     width: 60px;
     width: 60px;
 }
 
-.imagesection .imageDIVSection .imgContainer img{
+.imagesection .imageDIVSection .imgContainer img {
     width: 100%;
     width: 100%;
     object-fit: contain;
 }
+
+
+
+
+/* footer start */
+footer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 50px 50px;
+    background-color: rgb(247, 245, 241);
+}
+
+.main-footer {
+    width: 100%;
+    display: flex;
+    gap: 30px;
+}
+
+.main-footer .footer-container {
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+.main-footer .footer-email {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.footer-section h3 {
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.footer-section ul li {
+    list-style-type: none;
+    margin-top: 10px;
+    letter-spacing: 1.2px;
+    font-weight: 400;
+}
+
+.footer-email h4 {
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+
+.footer-email .email-container {
+    width: 350px;
+    border: 1px solid black;
+    height: 60px;
+    display: flex;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+    border-radius: 30px
+}
+
+.footer-email .email-container input {
+    width: 70%;
+    height: 100%;
+    border: none;
+    padding-left: 20px;
+}
+
+.footer-email .email-container button {
+    width: 30%;
+    height: 100%;
+    background-color: black;
+    color: rgb(194, 185, 176);
+    font-size: 15px;
+    letter-spacing: 1.2px;
+}
+
+
+
+.footer-end {
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* footer end */
 
 
 /* Small screens (max-width: 767px) */
@@ -909,7 +997,6 @@ nav ul li a {
 
     .popular-container {
         grid-template-columns: repeat(2, 1fr) !important;
-        /* Add !important to ensure it overrides other styles */
     }
 
     .popular-item .popular-image {
@@ -924,9 +1011,12 @@ nav ul li a {
         font-size: 12px;
     }
 
+    .slider-text-div {
+        width: 90%;
+    }
 
     #slider-text {
-        font-size: 25px;
+        font-size: 20px;
         letter-spacing: 1.3px;
     }
 
@@ -1013,6 +1103,48 @@ nav ul li a {
     .unmatched {
         padding: 40px;
     }
+
+
+    .main-footer {
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .footer-container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .footer-section {
+        text-align: center;
+    }
+
+    .main-footer .footer-container,
+    .main-footer .footer-email,
+    .footer-end {
+        width: 100%;
+        align-items: center;
+    }
+
+    #footer-end {
+        width: 100%;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    .main-footer .footer-container {
+        justify-content: center;
+    }
+
+    .footer-end {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
 }
+
 
 /* mid screens (max-width: 997px) end*/
