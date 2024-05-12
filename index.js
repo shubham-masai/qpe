@@ -290,7 +290,7 @@ imagesData.forEach(item => {
 });
 
 
- 
+
 
 const footerData = {
     about: [
@@ -306,7 +306,8 @@ const footerData = {
         "TIKTOK",
         "FACEBOOK",
         "YOUTUBE",
-        "PINTEREST"
+        "PINTEREST",
+        "X"
     ],
     info: [
         "SHIPPING & RETURNS",
@@ -336,3 +337,90 @@ followSection.innerHTML = createListItems(footerData.follow);
 // Populate Info section
 const infoSection = footer.querySelector('.footer-section:nth-child(3) ul');
 infoSection.innerHTML = createListItems(footerData.info);
+
+
+
+
+
+// video section 
+videosData = [
+    {
+        id: 1,
+        media: "https://cdn.shopify.com/videos/c/o/v/c9c72d1cab674b09b5cb270b973b0e49.mp4",
+        thumbnail: "https://cdn.shopify.com/s/files/1/0573/8502/5710/files/Video-99.jpg?v=1710951733"
+    },
+    {
+        id: 2,
+        media: "https://cdn.shopify.com/videos/c/o/v/77657cd42ef945a1a0f615ca2fff7497.mp4",
+        thumbnail: "https://cdn.shopify.com/s/files/1/0573/8502/5710/files/Video-54.jpg?v=1710941321"
+    },
+    {
+        id: 3,
+        media: "https://cdn.shopify.com/videos/c/o/v/d3adf36aee3841a29f6db4328d4bb688.mp4",
+        thumbnail: "https://cdn.shopify.com/s/files/1/0573/8502/5710/files/Video-70.jpg?v=1710951395"
+    },
+    {
+        id: 4,
+        media: "https://cdn.shopify.com/videos/c/o/v/48d74709132f452387bcb6615c27c44f.mp4",
+        thumbnail: "https://cdn.shopify.com/s/files/1/0573/8502/5710/files/Video-6.jpg?v=1710952830"
+    },
+    {
+        id: 5,
+        media: "https://cdn.shopify.com/videos/c/o/v/36183179fb894d8eae91b781c93cf1dd.mp4",
+        thumbnail: "https://cdn.shopify.com/s/files/1/0573/8502/5710/files/Video-41.jpg?v=1710941247"
+    },
+    {
+        id: 6,
+        media: "https://cdn.shopify.com/videos/c/o/v/4659acded9634860b5df36540272771a.mp4",
+        thumbnail: "https://cdn.shopify.com/s/files/1/0573/8502/5710/files/Video-88.jpg?v=1710952329"
+    },
+    {
+        id: 7,
+        media: "https://cdn.shopify.com/videos/c/o/v/e92e3b61eb8f4d84bf542bed37ab8194.mp4",
+        thumbnail: "https://cdn.shopify.com/s/files/1/0573/8502/5710/files/Video-64.jpg?v=1710952566"
+    },
+    {
+        id: 8,
+        media: "https://cdn.shopify.com/videos/c/o/v/49c69958cce545cd820f4dd71d87b26e.mp4",
+        thumbnail: "https://cdn.shopify.com/s/files/1/0573/8502/5710/files/Video-6.jpg?v=1710952830"
+    }
+]
+ 
+function showThumbnails() {
+    const videoThumbnailWrapper = document.querySelector('.video-thumbnail-wrapper');
+
+    videosData.forEach(video => {
+        const thumbnailContainer = document.createElement('div');
+        thumbnailContainer.classList.add('video-thumbnail');
+        thumbnailContainer.innerHTML = `<img src="${video.thumbnail}" alt="Thumbnail">`;
+
+        let videoElement;
+
+        thumbnailContainer.addEventListener('click', () => {
+            if (!videoElement) {
+                videoElement = document.createElement('video');
+                videoElement.src = video.media;
+                videoElement.controls = true;
+                videoElement.autoplay = true;
+                videoElement.classList.add('videoplayer');
+
+                // Remove thumbnail image
+                thumbnailContainer.innerHTML = '';
+
+                // Append video element
+                thumbnailContainer.appendChild(videoElement);
+            }
+        });
+
+        thumbnailContainer.addEventListener('click', (event) => {
+            if (videoElement && event.target === videoElement) {
+                thumbnailContainer.innerHTML = `<img src="${video.thumbnail}" alt="Thumbnail">`;
+                videoElement = null;
+            }
+        });
+
+        videoThumbnailWrapper.appendChild(thumbnailContainer);
+    });
+}
+
+window.onload = showThumbnails;
