@@ -195,25 +195,25 @@ populardata.forEach(item => {
 
 slidertitle = [
     {
-        id:1,
-        title:"Beautiful tea accessories and its high-quality, organic tea",
-        image:"https://cdn.shopify.com/s/files/1/0573/8502/5710/files/treehugger-logo_bea7c5c7-eb21-4c15-9b4f-08a2d144064f.png?v=1710880899&width=2048"
+        id: 1,
+        title: "Beautiful tea accessories and its high-quality, organic tea",
+        image: "https://cdn.shopify.com/s/files/1/0573/8502/5710/files/treehugger-logo_bea7c5c7-eb21-4c15-9b4f-08a2d144064f.png?v=1710880899&width=2048"
     },
     {
-        id:2,
-        title:"A premium loose leaf tea and steepware brand that elevates the drinkin ex erience",
-        image:"https://andytown-public.s3.us-west-1.amazonaws.com/templates/component-templates/bite%20hp/forbes.webp%3Fv%3D1706761922"
+        id: 2,
+        title: "A premium loose leaf tea and steepware brand that elevates the drinkin ex erience",
+        image: "https://andytown-public.s3.us-west-1.amazonaws.com/templates/component-templates/bite%20hp/forbes.webp%3Fv%3D1706761922"
     },
-   {
-    id:3,
-    title:"The difference shines through in the flavor",
-    image:"https://cdn.shopify.com/s/files/1/0573/8502/5710/files/the-spruce-eats.png?v=1710880706&width=2048"
-   },
-   {
-    id:4,
-    title:"A new and exciting entrant into the tea landscape",
-    image:"https://cdn.shopify.com/s/files/1/0573/8502/5710/files/goodhousekeeping_86a0f8e7-f854-47f2-8e5b-f8b0e0d7e5f4.png?v=1709931564&width=2048"
-   }
+    {
+        id: 3,
+        title: "The difference shines through in the flavor",
+        image: "https://cdn.shopify.com/s/files/1/0573/8502/5710/files/the-spruce-eats.png?v=1710880706&width=2048"
+    },
+    {
+        id: 4,
+        title: "A new and exciting entrant into the tea landscape",
+        image: "https://cdn.shopify.com/s/files/1/0573/8502/5710/files/goodhousekeeping_86a0f8e7-f854-47f2-8e5b-f8b0e0d7e5f4.png?v=1709931564&width=2048"
+    }
 ]
 
 
@@ -222,8 +222,8 @@ const sliderText = document.getElementById('slider-text');
 const sliderImage = document.getElementById('slider-image');
 
 function showNextSlide() {
-    sliderIndex  = (sliderIndex  + 1) % slidertitle.length; 
-    const currentItem = slidertitle[sliderIndex ];
+    sliderIndex = (sliderIndex + 1) % slidertitle.length;
+    const currentItem = slidertitle[sliderIndex];
 
     sliderImage.src = currentItem.image;
     sliderImage.alt = currentItem.title;
@@ -232,3 +232,59 @@ function showNextSlide() {
 
 showNextSlide();
 setInterval(showNextSlide, 5000);
+
+
+const imagesData = [
+    {
+        id: 1,
+        image: "https://cdn.shopify.com/s/files/1/0573/8502/5710/files/sustainability_icons-01.png?v=1711042986&width=2048",
+        title: "Compostable Packaging"
+    },
+    {
+        id: 2,
+        image: "https://cdn.shopify.com/s/files/1/0573/8502/5710/files/sustainability_icons-02.png?v=1711043017&width=2048",
+        title: "Climate Neutral Certified"
+    },
+    {
+        id: 3,
+        image: "https://cdn.shopify.com/s/files/1/0573/8502/5710/files/sustainability_icons-03.png?v=1711043038&width=2048",
+        title: "Carbon Neutral Shipping"
+    },
+    {
+        id: 4,
+        image: "https://cdn.shopify.com/s/files/1/0573/8502/5710/files/sustainability_icons-05.png?v=1711043060&width=2048",
+        title: "Responsibly Sourced"
+    },
+    {
+        id: 5,
+        image: "https://cdn.shopify.com/s/files/1/0573/8502/5710/files/sustainability_icons-04.png?v=1711043083&width=2048",
+        title: "Certified Organic"
+    }
+]
+
+const imageSection = document.getElementById('imageSection');
+
+
+imagesData.forEach(item => {
+    const imageDIVSection = document.createElement("div");
+    imageDIVSection.classList.add("imageDIVSection");
+    
+    const imgDiv = document.createElement("div");
+    imgDiv.classList.add("imgContainer");
+    const img = document.createElement('img');
+    img.src = item.image;
+    img.alt = item.title;
+    imgDiv.appendChild(img);
+
+
+    const titleDiv = document.createElement('div');
+    titleDiv.classList.add('titleContainer');
+    title = document.createElement("p");
+    title.classList.add('title');
+    title.textContent = item.title;
+    titleDiv.appendChild(title);
+
+    imageDIVSection.appendChild(imgDiv);
+    imageDIVSection.appendChild(titleDiv);
+    imageSection.appendChild(imageDIVSection);
+});
