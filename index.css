@@ -404,7 +404,7 @@ nav ul li a {
 .review .review-div span {
     margin-left: 10px;
 }
- 
+
 .review .review-div p {
     text-align: start;
 }
@@ -689,61 +689,55 @@ nav ul li a {
 }
 
 .popular-container {
-    font-family: 'Montserrat', sans-serif;
     width: 100%;
-    height: auto;
+    margin: auto;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 5px;
-
+    gap: 20px;
+    font-family: 'Montserrat', sans-serif;
 }
 
-.popular-container .popular-item {
+.popular-title,
+.popular-browse {
+    height: 50px;
     display: flex;
-    flex-direction: column;
-    overflow: auto;
-    border: 1px solid #ddd;
-    background-color: black;
+    align-items: center;
 }
 
-.popular-container .popular-item:hover {
-    border: 1px solid black;
-    background-color: rgb(207, 222, 140);
-}
 
-.popular-item .popular-title {
-    width: 100%;
+.popular-title{
     font-size: 15px;
-    letter-spacing: 1.2px;
-    word-spacing: 1.2px;
     font-weight: 600;
-    text-align: start;
-    padding: 10px 20px;
+    padding-left: 5px;
     background-color: white;
 }
+.popular-browse {
+    background-color: black;
+    color: white;
+    justify-content: center;
+    font-size: 15px;
+    letter-spacing: 1.2px;
+}
 
-.popular-item .popular-image {
-    width: 100%;
-    height: 340px;
+.popular-item {
+    height: 450px;
+    display: flex;
+    flex-direction: column;
     overflow: hidden;
+}
+
+.popular-item:hover .popular-browse{
+    background-color: rgb(207, 222, 140);;
+}
+.popular-item .popular-image {
+    flex-grow: 1;
 }
 
 .popular-item .popular-image img {
     width: 100%;
-    height: auto;
+    height: 100%;
     object-fit: cover;
 }
-
-.popular-item .popular-browse {
-    text-align: center;
-    padding: 10px;
-    color: white;
-    font-size: 15px;
-    letter-spacing: 1.2px;
-    word-spacing: 1.2px;
-    font-weight: 400;
-}
-
 
 
 /* popular section end */
@@ -884,27 +878,31 @@ nav ul li a {
 }
 
 #imageSection {
-    width: 70%;
-    height: 100px;
-    display: flex;
-    justify-content: space-between;
-    height: 200px;
+    width: 100%;
+    height: 150px;
     margin: auto;
-    align-items: center;
-    overflow: hidden;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10%;
+    padding: 0px 15%;
 }
 
 .imagesection .imageDIVSection {
-    width: 100px;
-    height: 100px;
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 25px;
 }
 
 .imagesection .imageDIVSection .imgContainer {
-    width: 60px;
-    width: 60px;
+    width: 50%;
+    height: 50%;
+}
+
+.imagesection .imageDIVSection .itleContainer {
+    width: 50%;
+    height: 50%;
 }
 
 .imageDIVSection .titleContainer {
@@ -918,8 +916,6 @@ nav ul li a {
     width: 100%;
     object-fit: contain;
 }
-
-
 
 
 /* footer start */
@@ -1107,22 +1103,26 @@ footer {
         padding: 0% 0%;
     }
 
+    
     .popular-container {
-        grid-template-columns: repeat(2, 1fr) !important;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
     }
 
-    .popular-item .popular-image {
-        height: 250px;
+    .popular-item{
+        height: 350px;
     }
 
-    .popular-item .popular-title {
+    .popular-browse,.popular-title{
+        height: 40px;
+    }
+
+    .popular-title{
         font-size: 12px;
     }
-
-    .popular-item .popular-browse {
-        font-size: 12px;
+    .popular-browse{
+        font-size: 10px;
     }
-
     .slider-text-div {
         width: 90%;
     }
@@ -1130,6 +1130,19 @@ footer {
     #slider-text {
         font-size: 20px;
         letter-spacing: 1.3px;
+    }
+
+    #imageSection {
+        gap: 1%;
+        padding: 0px 5%;
+    }
+
+    #imageSection .imageDIVSection {
+        gap: 0%;
+    }
+
+    #imageSection .titleContainer p {
+        font-size: 10px;
     }
 
 }
@@ -1205,24 +1218,26 @@ footer {
         font-size: 12px;
     }
 
-    .top-seller{
+    .top-seller {
         padding: 10px 10px;
     }
 
-    .top-seller h1{
+    .top-seller h1 {
         font-size: 20px;
     }
 
-    .cart .title-div p{
+    .cart .title-div p {
         font-size: 12px;
     }
 
-    .cart .description  span{
+    .cart .description span {
         font-size: 12px;
     }
-    .cart .description button{
+
+    .cart .description button {
         font-size: 12px;
     }
+
     #cart-container {
         width: 100%;
         display: grid;
@@ -1233,6 +1248,7 @@ footer {
     .unmatched {
         padding: 40px;
     }
+
 
 
     .main-footer {
