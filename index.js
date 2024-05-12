@@ -190,3 +190,45 @@ populardata.forEach(item => {
     newDiv.appendChild(browseDiv);
     popular.appendChild(newDiv);
 });
+
+
+
+slidertitle = [
+    {
+        id:1,
+        title:"Beautiful tea accessories and its high-quality, organic tea",
+        image:"https://cdn.shopify.com/s/files/1/0573/8502/5710/files/treehugger-logo_bea7c5c7-eb21-4c15-9b4f-08a2d144064f.png?v=1710880899&width=2048"
+    },
+    {
+        id:2,
+        title:"A premium loose leaf tea and steepware brand that elevates the drinkin ex erience",
+        image:"https://andytown-public.s3.us-west-1.amazonaws.com/templates/component-templates/bite%20hp/forbes.webp%3Fv%3D1706761922"
+    },
+   {
+    id:3,
+    title:"The difference shines through in the flavor",
+    image:"https://cdn.shopify.com/s/files/1/0573/8502/5710/files/the-spruce-eats.png?v=1710880706&width=2048"
+   },
+   {
+    id:4,
+    title:"A new and exciting entrant into the tea landscape",
+    image:"https://cdn.shopify.com/s/files/1/0573/8502/5710/files/goodhousekeeping_86a0f8e7-f854-47f2-8e5b-f8b0e0d7e5f4.png?v=1709931564&width=2048"
+   }
+]
+
+
+let sliderIndex = 0;
+const sliderText = document.getElementById('slider-text');
+const sliderImage = document.getElementById('slider-image');
+
+function showNextSlide() {
+    sliderIndex  = (sliderIndex  + 1) % slidertitle.length; 
+    const currentItem = slidertitle[sliderIndex ];
+
+    sliderImage.src = currentItem.image;
+    sliderImage.alt = currentItem.title;
+    sliderText.textContent = currentItem.title;
+}
+
+showNextSlide();
+setInterval(showNextSlide, 5000);
